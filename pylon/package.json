@@ -9,7 +9,8 @@
   "scripts": {
     "re:build": "rescript",
     "re:start": "rescript build -w",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "dev": "nodemon src/Index.bs.js"
   },
   "devDependencies": {
     "rescript": "^9.1.4"

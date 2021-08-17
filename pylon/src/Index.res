@@ -1,47 +1,54 @@
-let schemaToReactElement = schemaElement => {
-  Js.log(schemaElement)
-  "teste"
-}
+type children<'schema> = String(string) | Array(array<'schema>)
 
-let createElement = (schema, uiMap, actionsMap) => {
-  Js.log(uiMap)
-  Js.log(actionsMap)
-  Belt.Array.map(schema, schemaToReactElement)
-}
-
-type children<'schema> = [string | array<'schema>]
-
-type teste = {
+type rec teste = {
   component: string,
   children: children<teste>,
+}
+
+type schema = array<teste>
+
+let rec createElement = (schema: schema, uiMap, actionsMap) => {
+  let schemaToReactElement = schemaElement => {
+    Js.log2(schemaElement.component, schemaElement.children)
+    switch schemaElement.children {
+    | Array(element) => createElement(element, uiMap, actionsMap)
+    | String(element) => element
+    }
+  }
+
+  let a = Belt.Array.map(schema, schemaToReactElement)
+
+  // Js.log(a)
+  "joao"
 }
 
 let teste = [
   {
     component: "retriever:div",
-    children: [
+    children: Array([
       {
         component: "retriever:h1",
-        children: "Logo Housi",
+        children: String("Logo Housi"),
       },
       {
         component: "retriever:p",
-        children: [
+        children: Array([
           {
             component: "retriever:span",
-            children: "Sua casa ",
+            children: String("Sua casa "),
           },
           {
             component: "retriever:span",
-            children: "joao:teste",
+            children: String("joao:teste"),
           },
           {
             component: "retriever:span",
-            children: "joao:teste",
+            children: String("joao:teste"),
           },
-        ],
+        ]),
       },
-    ],
+    ]),
   },
 ]
-createElement(teste, "ui", "actions")
+
+let te = createElement(teste, "ui", "actions")
