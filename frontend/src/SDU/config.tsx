@@ -40,15 +40,15 @@ const Error = () => (
 
 const defaultComponentsMap = {
   "retriever:button": (props?: any) => <Button {...props} />,
-  "retriever:search": Search,
+  "retriever:search": (props?: any) => <Search {...props} />,
   "retriever:div": (props?: any) => <Div {...props} />,
   "retriever:h1": (props: any) => <H1 {...props} />,
   "retriever:h2": (props: any) => <H2 {...props} />,
   "retriever:span": (props: any) => <Span {...props} />,
   "retriever:p": (props: any) => <Paragraph {...props} />,
   "retriever:img": (props: any) => <Img {...props} />,
-  "custom:loading": Loading,
-  "custom:error": Error,
+  "custom:loading": (props: any) => <Loading {...props} />,
+  "custom:error": (props: any) => <Error {...props} />,
 };
 
 const defaultActionsMap = {
