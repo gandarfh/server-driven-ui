@@ -6,11 +6,53 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-Black.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-ExtraBold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-Bold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-SemiBold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-Medium.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-Light.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-ExtraLight.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Montserrat/Montserrat-Thin.ttf"
+            as="font"
+            crossOrigin=""
           />
         </Head>
         <ThemeProvider>

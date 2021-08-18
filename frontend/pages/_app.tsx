@@ -1,3 +1,4 @@
+import "../src/assets/global.css";
 import type { AppProps } from "next/app";
 import {
   ThemeProvider as RetrieverProvider,
