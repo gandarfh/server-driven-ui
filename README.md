@@ -14,16 +14,25 @@ Uma estrutura muito conhecida é a de simplesmente enviar os dados através de u
 
 Sera necessário desenvolver as seguintes implementações:
 
-- Backend (BFF) -> Ele ira expor o json para criar a tela.
+- [x] Backend (BFF) -> Ele ira disponibilizar o nosso schema.
+  - [x] Uma estrutura simples com pelo menos uma rota por tela.
+- [ ] Frontend -> Para renderizar os componentes informados pela api.
+  - [ ] No caso do react (Next.js) um provider para controlar as configurações básicas.
+  - [ ] Uma função simples para criar as configurações.
+  - [ ] Uma função que vai ler o json e gerar a arvore de componentes.
+  - [ ] Um hook para realizar a requisição e retornar a arvore de componentes.
+  - [ ] Implementar internacionalização com next-18next com os arquivos de tradução em uma ambiente externo.
+- [x] Criar um modelo do schema que será cria pela api e lido pelo frontend
 
-  - Uma estrutura simples com pelo menos uma rota por tela. ex: get -> /api/home representaria www.meu-site.com/
+## Estrutura
 
-- Frontend -> Para renderizar os componentes informados pela api.
-  - No caso do react (Next.js) um provider para controlar as configurações básicas.
-  - Uma função simples para criar as configurações.
-  - Uma função que vai ler o json e gerar a arvore de componentes.
-  - Um hook para realizar a requisição e retornar a arvore de componentes.
-  - Implementar internacionalização com next-18next com os arquivos de tradução em uma ambiente externo.
+Nossa aplicação seguirão com as estruturas definidas abaixo.
+
+Um ponto interessante de se avisar é que não irei desenvolver um backend bem estruturado ou com todos as firulas que conhecemos hoje em dia, a ideia aqui é exemplificar como pode ser feita essa conversa utilizando de SDU.
+
+Caso desejem estarei disponibilizando um monorepo contendo um exemplo do backend e do frontend desenvolvidos nesse artigo.
+
+Link para o [repositório](<[https://link](https://github.com/gandarfh/server-driven-ui)>).
 
 ### Backend
 
@@ -79,3 +88,50 @@ Nosso frontend terá a seguinte estrutura:
 ├── package.json
 └── tsconfig.json
 ```
+
+### Schema
+
+Um possível exemplo de interface
+
+```ts
+type Children = | string | number | Record<string, unknown> | string[] | number[] |  Record<string, unknown>[]
+
+interface Schema {
+  component: string
+  children: Schema[] | Children
+  [props: string]?: any
+}
+```
+
+Como pode notar, nossa estrutura é muito baseada em recursividade, um component tem um children que pode ter N components ou alguma outra coisa. Sempre bom lembrar de nunca esquecer esse tipo de estrutura deve sempre ter um break, para que ela não "quebre" e rode infinitamente.
+
+Representação do schema com um json
+
+```json
+[
+  {
+    "component": "retriever:div",
+    "bg": "primary.400",
+    "height": "300px",
+    "children": [
+      {
+        "component": "retriever:p",
+        "children": [
+          {
+            "component": "retriever:span",
+            "children": "Primeiro texto ",
+          }
+          {
+            "component": "retriever:span",
+            "color": "green.400",
+            "children": "Primeiro texto."
+          }
+        ]
+      }
+    ]
+  }
+  // {...} e a estrutura se repete quantas vezes for necessário.
+]
+```
+
+Com essas estruturas decididas, não falta mais nada para começarmos a desenvolver nossas funcionalidades.
