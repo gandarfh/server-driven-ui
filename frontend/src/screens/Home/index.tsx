@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar";
 import { useSdu } from "../../SDU/Context";
 
 const HomeScreen = () => {
-  const { components } = useSdu("api/home");
+  const { components } = useSdu();
 
   return (
     <>

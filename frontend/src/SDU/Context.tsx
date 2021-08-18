@@ -6,6 +6,7 @@ import createElement from "./createElement";
 export interface SduContextProps {
   initialData?: Record<string, unknown>[];
   baseRoute: string;
+  route: string;
   actionsMap: {
     [name: string]: (...props: any[]) => void;
   };
@@ -22,7 +23,7 @@ interface SduProviderProps {
   baseConfig: SduContextProps;
 }
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+export const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 export const SduContext = React.createContext({} as SduContextProps);
 
@@ -32,8 +33,8 @@ export const SduProvider = ({ baseConfig, children }: SduProviderProps) => {
   );
 };
 
-export const useSdu = (route: string) => {
-  const { baseRoute, initialData, componentsMap, actionsMap } =
+export const useSdu = () => {
+  const { baseRoute, initialData, componentsMap, actionsMap, route } =
     React.useContext(SduContext);
 
   const { data, isValidating, error } = useSWR(

@@ -6,6 +6,7 @@ import { SduContextProps } from "./Context";
 export interface BaseConfig {
   initialData?: Record<string, unknown>[];
   baseRoute: string;
+  route: string;
   actionsMap: {
     [name: string]: (props?: any) => void;
   };
