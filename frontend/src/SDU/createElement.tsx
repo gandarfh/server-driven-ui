@@ -1,6 +1,5 @@
-import { Trans } from "next-i18next";
 import React from "react";
-import { v4 } from "uuid";
+import { Trans } from "next-i18next";
 
 const createActionProps = (
   actionsMap: Record<string, (...props: any) => void>,
@@ -27,7 +26,9 @@ const createActionProps = (
   return action;
 };
 
-const Translate = ({ children }: { children: string }) => {
+const Translate = ({ children }: { children: string | number }) => {
+  if (typeof children !== "string") return <>{children}</>;
+
   return <Trans>{children}</Trans>;
 };
 
@@ -36,49 +37,35 @@ const createElement = (
   ui: Record<string, (props: any) => JSX.Element>,
   actionsMap: Record<string, (...props: any) => void>
 ): any => {
-  return schema.map((element) => {
+  return schema.map((element, index) => {
     const { component, children, actions, ...componentProps } = element;
-    const props = { ...componentProps, key: component + "-" + v4() };
     const actionsProps = createActionProps(actionsMap, actions);
 
-    if (!component.includes(":")) {
-      if (Array.isArray(children)) {
-        return React.createElement(
-          component,
-          props,
-          createElement(children as any, ui, actionsMap)
-        );
-      }
-
-      return React.createElement(component, props, children);
-    }
+    const props = {
+      ...componentProps,
+      ...actionsProps,
+      key: component + "-" + index,
+    };
 
     const RetrieverElement = ui[component];
 
     if (!RetrieverElement) {
-      return React.createElement(React.Fragment);
+      console.error(
+        `Component: ${component} not found. Check the name of component or valid the config.componentsMap to valid if ${component} exist!`
+      );
+      return React.createElement(React.Fragment, { key: "fragment-" + index });
     }
 
     if (Array.isArray(children)) {
       return RetrieverElement({
         ...props,
-        ...actionsProps,
-        children: createElement(children as any, ui, actionsMap),
-      });
-    }
-
-    if (typeof children === "string") {
-      return RetrieverElement({
-        ...props,
-        ...actionsProps,
-        children: Translate({ children }),
+        children: createElement(children, ui, actionsMap),
       });
     }
 
     return RetrieverElement({
       ...props,
-      ...actionsProps,
-      children,
+      children: Translate({ children }),
     });
   });
 };
