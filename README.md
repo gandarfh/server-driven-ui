@@ -107,7 +107,7 @@ Como pode notar, nossa estrutura é muito baseada em recursividade, um component
 
 Representação do schema com um json
 
-```json
+```
 [
   {
     "component": "retriever:div",
