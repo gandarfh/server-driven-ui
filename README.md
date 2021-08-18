@@ -12,4 +12,70 @@ Uma estrutura muito conhecida é a de simplesmente enviar os dados através de u
 
 ## Como implementar
 
-Partindo do momento onde já existe Çw
+Sera necessário desenvolver as seguintes implementações:
+
+- Backend (BFF) -> Ele ira expor o json para criar a tela.
+
+  - Uma estrutura simples com pelo menos uma rota por tela. ex: get -> /api/home representaria www.meu-site.com/
+
+- Frontend -> Para renderizar os componentes informados pela api.
+  - No caso do react (Next.js) um provider para controlar as configurações básicas.
+  - Uma função simples para criar as configurações.
+  - Uma função que vai ler o json e gerar a arvore de componentes.
+  - Um hook para realizar a requisição e retornar a arvore de componentes.
+  - Implementar internacionalização com next-18next com os arquivos de tradução em uma ambiente externo.
+
+### Backend
+
+Nosso backend terá a seguinte estrutura:
+
+```shell
+├── src
+│   ├── api
+│   │   ├── Home
+│   │   │   ├── controller.ts
+│   │   │   └── routes.ts
+│   │   └── Search
+│   │       ├── controller.ts
+│   │       └── routes.ts
+│   ├── app.ts
+│   ├── routes.ts
+│   └── server.ts
+├── package.json
+└── tsconfig.json
+```
+
+### Frontend
+
+Nosso frontend terá a seguinte estrutura:
+
+```shell
+├── pages
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── index.tsx
+│   └── search.tsx
+├── public
+│   ├── favicon.ico
+├── src
+│   ├── components
+│   │   ├── Layout.tsx
+│   │   ├── Navbar.tsx
+│   │   └── Search.tsx
+│   ├── screens
+│   │   ├── Home
+│   │   │   └── index.tsx
+│   │   └── Search
+│   │       └── index.tsx
+│   └── sdu
+│       ├── config.tsx
+│       ├── Context.tsx
+│       └── createElement.tsx
+├── retriever.d.ts
+├── next.config.js
+├── next-env.d.ts
+├── next-i18next.config.js
+├── README.md
+├── package.json
+└── tsconfig.json
+```
