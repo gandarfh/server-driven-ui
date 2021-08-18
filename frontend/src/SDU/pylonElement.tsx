@@ -32,7 +32,7 @@ const Translate = ({ children }: { children: string | number }) => {
   return <Trans>{children}</Trans>;
 };
 
-const createElement = (
+const pylonElement = (
   schema: Record<string, any>[],
   ui: Record<string, (props: any) => JSX.Element>,
   actionsMap: Record<string, (...props: any) => void>
@@ -59,7 +59,7 @@ const createElement = (
     if (Array.isArray(children)) {
       return RetrieverElement({
         ...props,
-        children: createElement(children, ui, actionsMap),
+        children: pylonElement(children, ui, actionsMap),
       });
     }
 
@@ -70,4 +70,4 @@ const createElement = (
   });
 };
 
-export default createElement;
+export default pylonElement;

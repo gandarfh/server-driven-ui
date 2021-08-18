@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import useSWR from "swr";
-import createElement from "./createElement";
+import pylonElement from "./pylonElement";
 
 export interface SduContextProps {
   initialData?: Record<string, unknown>[];
@@ -57,7 +57,7 @@ export const useSdu = () => {
     };
   }
 
-  const components = createElement(data, componentsMap, actionsMap);
+  const components = pylonElement(data, componentsMap, actionsMap);
 
   return {
     components,
