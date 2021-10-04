@@ -3,7 +3,7 @@ import HomeScreen from "../src/screens/Home";
 import { createConfig } from "../src/sdu/config";
 import { fetcher, SduProvider } from "../src/sdu/Context";
 
-export const getStaticProps = async ({ locale }: any) => {
+export const getServerSideProps = async ({ locale }: any) => {
   const data = await fetcher(
     `${process.env.NEXT_PUBLIC_API_URL}/api/home/search`
   );
