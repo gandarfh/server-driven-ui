@@ -1,4 +1,4 @@
-import { retriever } from "@retriever-ui/core";
+import { retriever } from "@retriever-ui/react";
 import Head from "next/head";
 
 interface LayoutProps {

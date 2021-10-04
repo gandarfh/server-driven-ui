@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { retriever } from "@retriever-ui/core";
+import { retriever } from "@retriever-ui/react";
 import Search from "../Components/Search";
 import { SduContextProps } from "./Context";
 

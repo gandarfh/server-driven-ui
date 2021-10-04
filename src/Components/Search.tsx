@@ -1,4 +1,4 @@
-import { retriever, Typography } from "@retriever-ui/core";
+import { retriever } from "@retriever-ui/react";
 
 interface SearchProps {
   label: string;

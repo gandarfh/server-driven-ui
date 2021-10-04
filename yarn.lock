@@ -322,59 +322,78 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@retriever-ui/core@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/core/-/core-0.4.0.tgz#60dee91361a2dcdca3c627e690ae4c22392efb00"
-  integrity sha512-0xgKtyyHK2OyGkq7HOzlkIsyPHK6odHIWUGDGcgirrREnKynpTO2CkEqa4U2TBiVC5K3IB9Z3PQqgu6/a5niFw==
-  dependencies:
-    "@retriever-ui/flex" "^0.1.1"
-    "@retriever-ui/grid" "^0.2.1"
-    "@retriever-ui/system" "^0.2.0"
-    "@retriever-ui/theme" "^1.0.0"
-    "@retriever-ui/type" "^0.0.10"
-    "@retriever-ui/typography" "^0.1.2"
-
-"@retriever-ui/flex@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/flex/-/flex-0.1.1.tgz#3767241dc21cfa5692314cf5ea17e2da662a53c7"
-  integrity sha512-X0RsD0BmPExcwaDc3KqgGLgowP19svkKWNI9RFU/KP4HlHnTB3KsHlNQVkwXKn4Yg5yz3puUUcu3EfonmhpeLg==
+"@retriever-ui/flex@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/flex/-/flex-0.1.3.tgz#78cd3693025d29382920b56f313923c5fc497709"
+  integrity sha512-F2j1ZdFIOHXgdKqN+BfpO0a0mzJi18xVa0eYtEh/DFqHoiFda1RBwH3VrI/HhQrx2mZGyb5xqgWcwiM4Uox4Ow==
   dependencies:
     "@emotion/react" "^11.4.0"
     "@emotion/styled" "^11.3.0"
-    "@retriever-ui/type" "^0.0.10"
+    "@retriever-ui/type" "^0.1.0"
 
-"@retriever-ui/grid@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/grid/-/grid-0.2.1.tgz#7618d9faf704cdd9f3d35951aabf29bc73f1427d"
-  integrity sha512-YfbP+9pHEJEdV9+KrpMHmEq5+P9Ez0PiMDjLGnBniP74QhW8u/01PIBpaHXkgeCveR6hyPkqnH23MJYUs+5g8Q==
+"@retriever-ui/grid@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/grid/-/grid-0.2.3.tgz#96290075e05582d456b07461aee2a361beaf92b4"
+  integrity sha512-oS/ZL6neTZPva5MsB+w/4fQyM7O5f6XFayUrMJmn4mF2nzKmHCMaMP1/I0M3poycT4YpPlmnom86keeYfsL1/w==
   dependencies:
-    "@retriever-ui/type" "^0.0.10"
+    "@retriever-ui/type" "^0.1.0"
 
-"@retriever-ui/system@^0.2.0":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/system/-/system-0.2.1.tgz#fa01201f48f5036c29db4fbccda7b51dc3592645"
-  integrity sha512-dBys585IC9YBt22DV9cpHfNwfuMdbc7KqMSxOYhVhvhvpALOgs5CSCDcqrT3XwipxQ9RVawdhsucxg+lNIiSPA==
-
-"@retriever-ui/theme@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/theme/-/theme-1.0.0.tgz#3ff5cdd90c9bef5821bb396b42a22969fcdc4928"
-  integrity sha512-gXmtua/9dvHGuvh2Qko3HrIXUDTHh9PAhA3dJH3a/XLMKyRtnQdzvAMdw3EKZ8Iikv436bg1kyoyRAGXh9U33A==
+"@retriever-ui/heading@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/heading/-/heading-0.0.4.tgz#134d523481f9ef5340bc3f3ac83549ddbb3b4040"
+  integrity sha512-jn/hJsK81TNnUuCuknOwTuL6gfP9Nz150Iza1bX/PyC5ItLq6Wce5GSHHLErE1Mwd5hfHD1HoLe+lHnnd/waoQ==
   dependencies:
-    "@retriever-ui/type" "^0.0.10"
+    "@retriever-ui/system" "^0.3.2"
 
-"@retriever-ui/type@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/type/-/type-0.0.10.tgz#50961cd6d1a5a327e202d012803d81373487e973"
-  integrity sha512-2131GRI/bVtZJ8XpfklRtsEcueTYTMKi3l0RsmzBTKZP9pS5eWQn6CEF2yB8UmYFcysuI1i7eJTD2vEvbOO3Mw==
-
-"@retriever-ui/typography@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@retriever-ui/typography/-/typography-0.1.2.tgz#7ea6ea2c93cae792d459a208657d854e4b951287"
-  integrity sha512-kiD5hqLilOBiKqYL1mDFmgT21nowTboOy1IOPiJGlPHXJveMg1zYtVntdxTO9OakQwjeHt6RDG7nGWbx0LOCwQ==
+"@retriever-ui/layout@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/layout/-/layout-0.1.0.tgz#81de88a6d8cc09aca94ce1c46d0d4485563169bf"
+  integrity sha512-Si0bOt3pyx534vHgaV7yn00D1b6uq9Hn9G1+r/37/z32tZ173p/cvUHpndgLF5/YtTBRMnqhWPnfmykuOFdIeA==
   dependencies:
-    "@emotion/react" "^11.4.0"
+    "@retriever-ui/system" "^0.3.2"
+
+"@retriever-ui/paragraph@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/paragraph/-/paragraph-0.0.4.tgz#2da9d2db7ad09783056d8e568a9d9cf7c6c1d54d"
+  integrity sha512-ARVnHmlezRnc5ai8uH6nGZTGJO6P8mmFH9Kb5j0nysMpwzZIf70pG48g8qOE5rIIoNHTCTz2xVJysNGUl4tzUA==
+  dependencies:
+    "@retriever-ui/system" "^0.3.2"
+
+"@retriever-ui/react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/react/-/react-1.1.0.tgz#522c0aae85a690dea6d78a4ecd7a795c6deddcba"
+  integrity sha512-SsW23xeMBKulmDikTDb31telTnOpcreWt8VNPxoLVfAk43/9E8vOUxWZPg8n7mmInJ1tn1IUB0MAeqZx0sLPKg==
+  dependencies:
+    "@emotion/react" "^11.4.1"
     "@emotion/styled" "^11.3.0"
-    "@retriever-ui/type" "^0.0.10"
+    "@retriever-ui/flex" "^0.1.3"
+    "@retriever-ui/grid" "^0.2.3"
+    "@retriever-ui/heading" "^0.0.4"
+    "@retriever-ui/layout" "^0.1.0"
+    "@retriever-ui/paragraph" "^0.0.4"
+    "@retriever-ui/system" "^0.3.2"
+    "@retriever-ui/theme" "^1.1.0"
+    "@retriever-ui/type" "^0.1.0"
+    csstype "^3.0.8"
+
+"@retriever-ui/system@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/system/-/system-0.3.2.tgz#607d0b8cdf32e1f50330462d025f252ced03ab50"
+  integrity sha512-I3weurj2sOKUweVLLoZWm7Mah0+IE/1mGoccSGbi/Zyaax0JJnYHgjlVVQLWdkHsInF3dAFtky4waCOvxmiZLg==
+  dependencies:
+    lodash "^4.17.21"
+
+"@retriever-ui/theme@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/theme/-/theme-1.1.0.tgz#d497852677640ee1a50ece2cc486535db900a47d"
+  integrity sha512-989i9LrdZhMwfVnbjdpwweXntyibFG3Nc2F6VUc4/Rtnz9hTh75Vav8sZ6RVz0FI8JvArXQMXXVx2+QiPNVbNA==
+  dependencies:
+    "@retriever-ui/type" "^0.1.0"
+
+"@retriever-ui/type@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@retriever-ui/type/-/type-0.1.0.tgz#66789fb3567b79e54213418d410b6bee86d1bd6f"
+  integrity sha512-nFwCEJaL8YTMVMxFwBTbNppyUb9dDAIp8Hxb2gNe4edWxQvp6eJkZZdCH5J6HC45MbRmV/4FlIXROJTksKG3AA==
 
 "@rushstack/eslint-patch@^1.0.6":
   version "1.0.6"
@@ -2237,7 +2256,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@^4.17.13:
+lodash@^4.17.13, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==

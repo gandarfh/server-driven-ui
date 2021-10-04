@@ -1,4 +1,4 @@
-import { retriever, Typography } from "@retriever-ui/core";
+import { retriever, Heading, Paragraph } from "@retriever-ui/react";
 import Layout from "./Layout";
 
 const Navbar = () => {
@@ -19,12 +19,10 @@ const Navbar = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Typography size="medium" variant="title">
-            Logo Housi
-          </Typography>
+          <Heading fontSize="medium">Logo Housi</Heading>
 
           <Box d="flex">
-            <Typography variant="text">Menu</Typography>
+            <Paragraph>Menu</Paragraph>
           </Box>
         </Box>
       </Layout>

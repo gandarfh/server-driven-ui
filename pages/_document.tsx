@@ -1,4 +1,4 @@
-import { retriever, ThemeProvider } from "@retriever-ui/core";
+import { retriever, RetrieverProvider } from "@retriever-ui/react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 const Body = retriever("body");
 class MyDocument extends Document {
@@ -55,12 +55,12 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
-        <ThemeProvider>
+        <RetrieverProvider>
           <Body bg="black.100">
             <Main />
             <NextScript />
           </Body>
-        </ThemeProvider>
+        </RetrieverProvider>
       </Html>
     );
   }

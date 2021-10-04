@@ -1,9 +1,6 @@
 import "../src/assets/global.css";
 import type { AppProps } from "next/app";
-import {
-  ThemeProvider as RetrieverProvider,
-  GlobalStyles,
-} from "@retriever-ui/core";
+import { RetrieverProvider, GlobalStyles } from "@retriever-ui/react";
 import { appWithTranslation } from "next-i18next";
 
 import i18next from "../next-i18next.config";
