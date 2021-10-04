@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { NextApiRequest, NextApiResponse } from "next";
 
-const show = (req: Request, res: Response) => {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json([
     {
       component: "retriever:div",
@@ -60,8 +60,4 @@ const show = (req: Request, res: Response) => {
       ],
     },
   ]);
-};
-
-export default {
-  show,
-};
+}
